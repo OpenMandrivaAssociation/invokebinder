@@ -1,7 +1,7 @@
 %{?_javapackages_macros:%_javapackages_macros}
 Name:           invokebinder
 Version:        1.1
-Release:        4.0%{?dist}
+Release:        8.1
 Summary:        A Java DSL for binding method handles forward, rather than backward
 
 License:        ASL 2.0
@@ -18,7 +18,7 @@ BuildRequires:  maven-install-plugin
 BuildRequires:  maven-jar-plugin
 BuildRequires:  maven-javadoc-plugin
 BuildRequires:  maven-surefire-plugin
-BuildRequires:  maven-surefire-provider-junit4
+BuildRequires:  maven-surefire-provider-junit
 
 Requires:       java
 Requires:       jpackage-utils
@@ -59,17 +59,26 @@ install -pm 644 pom.xml  \
 
 %add_maven_depmap JPP-%{name}.pom %{name}.jar
 
-%files
+%files -f .mfiles
 %doc LICENSE
-%{_mavenpomdir}/JPP-%{name}.pom
-%{_mavendepmapfragdir}/%{name}
-%{_javadir}/%{name}.jar
 
 %files javadoc
 %doc LICENSE
 %{_javadocdir}/%{name}
 
 %changelog
+* Fri Jun 27 2014 Yaakov Selkowitz <yselkowi@redhat.com> - 1.1-8
+- Fix FTBFS due to XMvn changes in F21 (#1106802)
+
+* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
+* Fri Mar 28 2014 Michael Simacek <msimacek@redhat.com> - 1.1-6
+- Use Requires: java-headless rebuild (#1067528)
+
+* Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
