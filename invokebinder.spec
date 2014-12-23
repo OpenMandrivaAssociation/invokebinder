@@ -3,7 +3,7 @@ Name:           invokebinder
 Version:        1.1
 Release:        8.1
 Summary:        A Java DSL for binding method handles forward, rather than backward
-
+Group:		Development/Java
 License:        ASL 2.0
 URL:            http://github.com/headius/%{name}/
 Source0:        https://github.com/headius/%{name}/archive/%{name}-%{version}.tar.gz
