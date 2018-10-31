@@ -1,7 +1,7 @@
 %{?_javapackages_macros:%_javapackages_macros}
 Name:           invokebinder
 Version:        1.2
-Release:        1.1
+Release:        1.2
 Summary:        A Java DSL for binding method handles forward, rather than backward
 Group:		Development/Java
 License:        ASL 2.0
