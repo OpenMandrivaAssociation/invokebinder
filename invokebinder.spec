@@ -5,7 +5,7 @@ Release:        1.2
 Summary:        A Java DSL for binding method handles forward, rather than backward
 Group:		Development/Java
 License:        ASL 2.0
-URL:            http://github.com/headius/%{name}/
+URL:            https://github.com/headius/%{name}/
 Source0:        https://github.com/headius/%{name}/archive/%{name}-%{version}.tar.gz
 BuildArch:      noarch
 
