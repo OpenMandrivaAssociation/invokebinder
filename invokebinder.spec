@@ -1,11 +1,11 @@
 Name:		invokebinder
-Version:	1.13
+Version:	1.16
 Release:	1
 Summary:	MethodHandle transforms for JRuby
 Group:		Development/Java
 License:	Apache-2.0
 URL:		https://github.com/headius/invokebinder
-# Tag invokebinder-1.13. Twenty Java sources plus module-info.
+# Tag invokebinder-1.16. Twenty Java sources plus module-info.
 # JRuby 9.4.14 compiles against this artifact. Binder uses VarHandle,
 # so the classes are release 9. The Gradle tool is not involved.
 Source0:	invokebinder-%{version}.tar.gz
@@ -17,7 +17,10 @@ BuildRequires:	javapackages-filesystem
 
 %description
 com.headius:invokebinder %{version}. Binder.insert places a constant
-argument on a method handle. The sources are compiled with javac.
+argument on a method handle. 1.14 through 1.16 add Signature.from
+for a MethodType, a return-only Signature constructor, and a
+patterned collect on SmartBinder. isAssignableFrom argument order
+is corrected. The sources are compiled with javac.
 
 %prep
 %autosetup -n invokebinder-invokebinder-%{version} -p1
@@ -56,7 +59,7 @@ cat > invokebinder.pom << 'END'
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.headius</groupId>
   <artifactId>invokebinder</artifactId>
-  <version>1.13</version>
+  <version>%{version}</version>
   <name>invokebinder</name>
   <description>MethodHandle argument transforms.</description>
   <url>https://github.com/headius/invokebinder</url>
@@ -77,7 +80,7 @@ sysjar install --buildroot %{buildroot} \
 	--filelist .mfiles
 idx="%{buildroot}/usr/share/sysjar/index/com.headius/invokebinder.sysjar"
 test -s "$idx"
-grep -F -q '"version": "1.13"' "$idx"
+grep -F -q '"version": "%{version}"' "$idx"
 grep -F -q '"artifactId": "invokebinder"' "$idx"
 test -s %{buildroot}%{_javadir}/invokebinder.jar
 

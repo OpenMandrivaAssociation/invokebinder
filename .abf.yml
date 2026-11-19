@@ -1,5 +1,6 @@
+sources:
+  invokebinder-1.16.tar.gz: 82a01e80849dde833d44bc718bc894f9538a9605
 removed_sources:
+  invokebinder-1.13.tar.gz: e411eca68c0e578871b21efacbcc635e57d1ba1d
   invokebinder-1.1.tar.gz: 5d0daf82ef0d324f88ce07c557c494b6b29722ee
   invokebinder-1.2.tar.gz: 6750fd2b0222e42d14997e65c534c023c15210a8
-sources:
-  invokebinder-1.13.tar.gz: e411eca68c0e578871b21efacbcc635e57d1ba1d
